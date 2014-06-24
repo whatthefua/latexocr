@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1403598766 source:d:\appserv\www\latexocr\testfile1.cpp
+1403599214 source:d:\appserv\www\latexocr\testfile1.cpp
 	<algorithm>
 	<cmath>
 	<cstdio>
@@ -21,7 +21,7 @@
 	"image_object.hpp"
 	"otsu.hpp"
 
-1403598984 d:\appserv\www\latexocr\image_object.hpp
+1403599625 d:\appserv\www\latexocr\image_object.hpp
 	<cstdlib>
 	<cmath>
 

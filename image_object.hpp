@@ -170,7 +170,7 @@
             fwrite(buff,1,2,image_fp);
 
             padding_len = (4 - ((3 * _w) % 4)) % 4;
-            file_size = 55 + (3 * _w + padding_len) * _h;
+            file_size = 54 + (3 * _w + padding_len) * _h;
             buff[0] = file_size % 256;
             buff[1] = (file_size >> 8) % 256;
             buff[2] = (file_size >> 16) % 256;
@@ -210,7 +210,18 @@
 
             buff[0] = 0;
             fwrite(buff,1,4,image_fp);
+
+            file_size -= 54;
+            buff[0] = file_size % 256;
+            buff[1] = (file_size >> 8) % 256;
+            buff[2] = (file_size >> 16) % 256;
+            buff[3] = (file_size >> 24) % 256;
             fwrite(buff,1,4,image_fp);
+
+            buff[0] = 0;
+            buff[1] = 0;
+            buff[2] = 0;
+            buff[3] = 0;
             fwrite(buff,1,4,image_fp);
             fwrite(buff,1,4,image_fp);
             fwrite(buff,1,4,image_fp);
@@ -230,7 +241,7 @@
                 buff[1] = 0;
                 buff[2] = 0;
                 buff[3] = 0;
-                fread(buff,1,padding_len,image_fp);
+                fwrite(buff,1,padding_len,image_fp);
             }
 
             return 0;
