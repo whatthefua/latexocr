@@ -38,6 +38,13 @@
         {
             int i;
 
+            for(i = 0; i < _w; i++)
+            {
+                free(_image[i]);
+            }
+
+            free(_image);
+
             _w = w;
             _h = h;
             _image = (unsigned char**) malloc(_w * sizeof(unsigned char*));

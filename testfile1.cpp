@@ -30,10 +30,13 @@ int main()
 {
     gy_image_object test;
 
-    test.load_image("image.bmp");
+    test.load_image("out.bmp");
 
-    printf("%d %d %d",test.width(),test.height(),test.get_pixel(99,113));
+    printf("%d %d\n",test.width(),test.height());
 
-    preprocessing_otsu(test);
+    preprocessing_sobel(test);
+
+    printf("%d %d\n",test.width(),test.height());
+
     test.save_image("otsu_test.bmp");
 }
