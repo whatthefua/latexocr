@@ -30,5 +30,7 @@ int main()
 {
     gy_image_object test;
 
+    test.load_image("out.bmp");
 
+    printf("%d %d %d",test.width(),test.height(),test.get_pixel(99,113));
 }
