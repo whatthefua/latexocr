@@ -150,5 +150,90 @@
 
             return 0;
         }
+
+        //saves a bitmap file
+        int save_image(char* filename)
+        {
+            FILE *image_fp;
+            unsigned char buff[16];
+            int i,j,padding_len,file_size;
+
+            image_fp = fopen(filename,"wb");
+
+            if(image_fp == NULL)
+            {
+                return -1;
+            }
+
+            buff[0] = 'B';
+            buff[1] = 'M';
+            fwrite(buff,1,2,image_fp);
+
+            padding_len = (4 - ((3 * _w) % 4)) % 4;
+            file_size = 55 + (3 * _w + padding_len) * _h;
+            buff[0] = file_size % 256;
+            buff[1] = (file_size >> 8) % 256;
+            buff[2] = (file_size >> 16) % 256;
+            buff[3] = (file_size >> 24) % 256;
+            fwrite(buff,1,4,image_fp);
+
+            buff[0] = 0;
+            buff[1] = 0;
+            buff[2] = 0;
+            buff[3] = 0;
+            fwrite(buff,1,4,image_fp);
+
+            buff[0] = 54;
+            fwrite(buff,1,4,image_fp);
+
+            buff[0] = 40;
+            fwrite(buff,1,4,image_fp);
+
+            buff[0] = _w % 256;
+            buff[1] = (_w >> 8) % 256;
+            buff[2] = (_w >> 16) % 256;
+            buff[3] = (_w >> 24) % 256;
+            fwrite(buff,1,4,image_fp);
+
+            buff[0] = _h % 256;
+            buff[1] = (_h >> 8) % 256;
+            buff[2] = (_h >> 16) % 256;
+            buff[3] = (_h >> 24) % 256;
+            fwrite(buff,1,4,image_fp);
+
+            buff[0] = 1;
+            buff[1] = 0;
+            fwrite(buff,1,2,image_fp);
+
+            buff[0] = 24;
+            fwrite(buff,1,2,image_fp);
+
+            buff[0] = 0;
+            fwrite(buff,1,4,image_fp);
+            fwrite(buff,1,4,image_fp);
+            fwrite(buff,1,4,image_fp);
+            fwrite(buff,1,4,image_fp);
+            fwrite(buff,1,4,image_fp);
+            fwrite(buff,1,4,image_fp);
+
+            for(i = _h - 1; i >= 0; i--)
+            {
+                for(j = 0; j < _w; j++)
+                {
+                    buff[0] = _image[j][i];
+                    buff[1] = _image[j][i];
+                    buff[2] = _image[j][i];
+                    fwrite(buff,1,3,image_fp);
+                }
+
+                buff[0] = 0;
+                buff[1] = 0;
+                buff[2] = 0;
+                buff[3] = 0;
+                fread(buff,1,padding_len,image_fp);
+            }
+
+            return 0;
+        }
     };
 #endif

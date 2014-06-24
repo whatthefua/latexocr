@@ -33,4 +33,6 @@ int main()
     test.load_image("out.bmp");
 
     printf("%d %d %d",test.width(),test.height(),test.get_pixel(99,113));
+
+    test.save_image("outtest.bmp");
 }
