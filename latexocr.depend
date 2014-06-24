@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1403594125 source:d:\appserv\www\latexocr\testfile1.cpp
+	<algorithm>
+	<cmath>
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	<deque>
+	<functional>
+	<iostream>
+	<list>
+	<map>
+	<queue>
+	<set>
+	<stack>
+	<string>
+	<vector>
+	"preprocessing.hpp"
+
+1403594209 d:\appserv\www\latexocr\preprocessing.hpp
+	"image_object.hpp"
+	"otsu.hpp"
+
+1403594196 d:\appserv\www\latexocr\image_object.hpp
+	<cstdlib>
+
+1403594209 d:\appserv\www\latexocr\otsu.hpp
+	"image_object.hpp"
+

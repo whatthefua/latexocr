@@ -1,6 +1,6 @@
 #ifndef preprocessing
     #define preprocessing
 
-    #include "gy_image_object.h"
-    #include "otsu.h"
+    #include "image_object.hpp"
+    #include "otsu.hpp"
 #endif

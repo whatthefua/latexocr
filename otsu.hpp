@@ -1,9 +1,9 @@
 #ifndef otsu
     #define otsu
 
-    #include "gy_image_object.h"
+    #include "image_object.hpp"
 
-    void preprocessing_otsu(gy_image_object &image)
+    /*void preprocessing_otsu(gy_image_object &image)
     {
         int histogram[256],i;
 
@@ -11,5 +11,5 @@
         {
             histogram[i] = 0;
         }
-    }
+    }*/
 #endif
