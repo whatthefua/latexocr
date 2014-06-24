@@ -82,7 +82,7 @@
             return _h;
         }
 
-        //loads a bitmap file into image
+        //loads a bitmap file into image, returns -1 when failure occurs
         int load_image(char* filename)
         {
             FILE *image_fp;
@@ -151,7 +151,7 @@
             return 0;
         }
 
-        //saves a bitmap file
+        //saves a bitmap file, returns -1 when failure occurs
         int save_image(char* filename)
         {
             FILE *image_fp;
