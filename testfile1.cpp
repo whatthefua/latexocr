@@ -34,20 +34,30 @@ int main()
 
     test.load_image("hough_test.bmp");
 
-    M = preprocessing_linear_hough(test,M);
+    free(M);
 
-    int d = (int)ceil(sqrt(test.width() * test.width() + test.height() * test.height())),i,j;
+    M = preprocessing_circular_hough(test,M,30,50);
 
-    for(i = 0; i <= 2 * d; i++)
+    int i,j,k,w = test.width(),h = test.height(),mxi = 0,mni = 2000000000;
+
+    for(i = 0; i < w; i++)
     {
-        for(j = 0; j < 180; j++)
+        for(j = 0; j < h; j++)
         {
-            if(M[i * 180 + j] > 60)
+            for(k = 0; k < 21; k++)
             {
-                printf("(%d,%d): %d\n",i - d,j - 89,M[i * 180 + j]);
+                if(M[(i * h + j) * 21 + k] > 60)
+                {
+                    printf("(%d,%d,%d): %d\n",i,j,k + 30,M[(i * h + j) * 21 + k]);
+                }
+
+                mxi = max(mxi,(i * h + j) * 21 + k);
+                mni = min(mni,(i * h + j) * 21 + k);
             }
         }
     }
+
+    printf("%d %d %d\n",mxi,mni,M);
 
     free(M);
 }
