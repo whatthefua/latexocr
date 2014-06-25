@@ -32,9 +32,9 @@ int main()
 {
     gy_image_object test;
 
-    test.load_image("hough_test.bmp");
+    test.load_image("test1.bmp");
 
-    preprocessing_zhang_suen(test);
+    preprocessing_niblack(test,100);
 
     test.save_image("out.bmp");
 }

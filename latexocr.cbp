@@ -33,10 +33,12 @@
 		</Compiler>
 		<Unit filename="hough.hpp" />
 		<Unit filename="image_object.hpp" />
+		<Unit filename="niblack.hpp" />
 		<Unit filename="otsu.hpp" />
 		<Unit filename="preprocessing.hpp" />
 		<Unit filename="sobel.hpp" />
 		<Unit filename="testfile1.cpp" />
+		<Unit filename="zhang_suen.hpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
