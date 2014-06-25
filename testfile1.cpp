@@ -36,7 +36,7 @@ int main()
 
     free(M);
 
-    M = preprocessing_circular_hough(test,M,30,50);
+    M = preprocessing_circular_hough(test,M,10,25);
 
     int i,j,k,w = test.width(),h = test.height(),mxi = 0,mni = 2000000000;
 
@@ -44,20 +44,18 @@ int main()
     {
         for(j = 0; j < h; j++)
         {
-            for(k = 0; k < 21; k++)
+            for(k = 0; k < 16; k++)
             {
-                if(M[(i * h + j) * 21 + k] > 60)
+                if(M[(i * h + j) * 16 + k] > 71)
                 {
-                    printf("(%d,%d,%d): %d\n",i,j,k + 30,M[(i * h + j) * 21 + k]);
+                    printf("(%d,%d,%d): %d\n",i,j,k + 10,M[(i * h + j) * 16 + k]);
                 }
 
-                mxi = max(mxi,(i * h + j) * 21 + k);
-                mni = min(mni,(i * h + j) * 21 + k);
+                mxi = max(mxi,(i * h + j) * 16 + k);
+                mni = min(mni,(i * h + j) * 16 + k);
             }
         }
     }
-
-    printf("%d %d %d\n",mxi,mni,M);
 
     free(M);
 }

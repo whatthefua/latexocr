@@ -61,8 +61,8 @@
                     {
                         for(l = 0; l < 360; l += 5)
                         {
-                            x = trunc((double)i + (double)k * cos(l * M_PI / (double)360));
-                            y = trunc((double)j + (double)k * sin(l * M_PI / (double)360));
+                            x = trunc((double)i + (double)k * cos((double)l * M_PI / (double)360));
+                            y = trunc((double)j + (double)k * sin((double)l * M_PI / (double)360));
 
                             if((x >= 0) && (y >= 0) && (x < w) && (y < h))
                             {
@@ -76,7 +76,7 @@
             }
         }
 
-        printf("%d %d %d\n",mxi,mni,w * h * (maxRadius - minRadius + 1));
+        printf("%d %d %d %d\n",mxi,mni,w * h * (maxRadius - minRadius + 1));
 
         return M;
     }

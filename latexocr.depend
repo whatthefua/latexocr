@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1403673203 source:d:\appserv\www\latexocr\testfile1.cpp
+1403673904 source:d:\appserv\www\latexocr\testfile1.cpp
 	<algorithm>
 	<cmath>
 	<cstdio>
@@ -36,7 +36,7 @@
 1403607415 d:\appserv\www\latexocr\moravec.hpp
 	"image_object.hpp"
 
-1403673316 d:\appserv\www\latexocr\hough.hpp
+1403674287 d:\appserv\www\latexocr\hough.hpp
 	"image_object.hpp"
 	<cstdlib>
 	<cmath>
