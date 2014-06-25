@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1403682257 source:d:\appserv\www\latexocr\testfile1.cpp
+1403684154 source:d:\appserv\www\latexocr\testfile1.cpp
 	<algorithm>
 	<cmath>
 	<cstdio>
@@ -17,11 +17,12 @@
 	<vector>
 	"preprocessing.hpp"
 
-1403664431 d:\appserv\www\latexocr\preprocessing.hpp
+1403682697 d:\appserv\www\latexocr\preprocessing.hpp
 	"image_object.hpp"
 	"otsu.hpp"
 	"sobel.hpp"
 	"hough.hpp"
+	"zhang_suen.hpp"
 
 1403682379 d:\appserv\www\latexocr\image_object.hpp
 	<cstdlib>
@@ -36,10 +37,13 @@
 1403607415 d:\appserv\www\latexocr\moravec.hpp
 	"image_object.hpp"
 
-1403681065 d:\appserv\www\latexocr\hough.hpp
+1403682615 d:\appserv\www\latexocr\hough.hpp
 	"image_object.hpp"
 	<cstdlib>
 	<cmath>
 
 1403664836 d:\appserv\www\latexocr\matrix.hpp
+
+1403684410 d:\appserv\www\latexocr\zhang_suen.hpp
+	"image_object.hpp"
 

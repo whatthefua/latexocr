@@ -5,4 +5,5 @@
     #include "otsu.hpp"
     #include "sobel.hpp"
     #include "hough.hpp"
+    #include "zhang_suen.hpp"
 #endif

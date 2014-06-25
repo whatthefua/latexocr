@@ -78,8 +78,6 @@
             }
         }
 
-        printf("%d %d %d\n",mxi,mni,w * h * (maxRadius - minRadius + 1));
-
         return M;
     }
 #endif
