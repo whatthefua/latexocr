@@ -16,6 +16,7 @@
         {
             _w = 0;
             _h = 0;
+            _image = (unsigned char*)malloc(sizeof(unsigned char));
 
             resize(1,1);
         }
