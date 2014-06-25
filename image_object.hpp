@@ -24,15 +24,12 @@
         //gy_image_object destructor
         ~gy_image_object()
         {
-            int i;
             free(_image);
         }
 
         //resize image to (w,h)
         void resize(int w, int h)
         {
-            int i;
-
             free(_image);
 
             _w = w;
