@@ -3,6 +3,7 @@
 
     #include <cstdlib>
     #include <cmath>
+    #include <vector>
 
     //grayscale image object
     class gy_image_object
@@ -36,7 +37,13 @@
             _h = h;
             _image = (unsigned char*)malloc(_w * _h);
         }
-
+        
+        // get size of image
+        // return pair of (width,height)
+        std::pair<int,int> size(){
+            return std::pair<int,int>(_w,_h);
+        }
+        
         //set pixel at (x,y) to v
         void set_pixel(int x, int y, unsigned char v)
         {
