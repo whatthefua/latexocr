@@ -26,8 +26,8 @@
             sum += i * histogram[i];
         }
 
-        int tot = w * h,wB = 0,wF = 0,sumB = 0,threshold;
-        double mB,mF,between,mx = 0,th1,th2;
+        int tot = w * h,wB = 0,wF = 0,sumB = 0,threshold=0;
+        double mB,mF,between,mx = 0,th1=0.0,th2=0.0;
 
         for(i = 0; i < 256; i++)
         {
