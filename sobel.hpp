@@ -3,7 +3,7 @@
 
     #include "image_object.hpp"
 
-    void preprocessing_sobel(gy_image_object& img)
+    void preprocessing_sobel(gy_image_object &img)
     {
         int Gx[img.width() - 2][img.height() - 2],Gy[img.width() - 2][img.height() - 2],IM[img.width()][img.height()],i,j,r,w,h;
 

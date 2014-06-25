@@ -26,17 +26,28 @@ using namespace std;
 
 #include "preprocessing.hpp"
 
+int *M;
+
 int main()
 {
     gy_image_object test;
 
-    test.load_image("out.bmp");
+    test.load_image("hough_test.bmp");
 
-    printf("%d %d\n",test.width(),test.height());
+    M = preprocessing_linear_hough(test,M);
 
-    preprocessing_sobel(test);
+    int d = (int)ceil(sqrt(test.width() * test.width() + test.height() * test.height())),i,j;
 
-    printf("%d %d\n",test.width(),test.height());
+    for(i = 0; i <= 2 * d; i++)
+    {
+        for(j = 0; j < 180; j++)
+        {
+            if(M[i * 180 + j] > 60)
+            {
+                printf("(%d,%d): %d\n",i - d,j - 89,M[i * 180 + j]);
+            }
+        }
+    }
 
-    test.save_image("otsu_test.bmp");
+    free(M);
 }
