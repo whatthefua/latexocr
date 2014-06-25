@@ -38,6 +38,8 @@
         return M;
     }
 
+    /*extracts circles from img into M
+    WARNING: computationally expensive in both time and memory, beware of large images*/
     int* preprocessing_circular_hough(gy_image_object img, int* M, int minRadius, int maxRadius)
     {
         int w = img.width(),h = img.height(),i,j,k,l,x,y,mxi = 0,mni = 2000000000;
@@ -76,7 +78,7 @@
             }
         }
 
-        printf("%d %d %d %d\n",mxi,mni,w * h * (maxRadius - minRadius + 1));
+        printf("%d %d %d\n",mxi,mni,w * h * (maxRadius - minRadius + 1));
 
         return M;
     }

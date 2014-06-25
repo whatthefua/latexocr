@@ -34,8 +34,6 @@ int main()
 
     test.load_image("hough_test.bmp");
 
-    free(M);
-
     M = preprocessing_circular_hough(test,M,10,25);
 
     int i,j,k,w = test.width(),h = test.height(),mxi = 0,mni = 2000000000;

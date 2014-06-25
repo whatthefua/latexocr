@@ -8,7 +8,7 @@
     class gy_image_object
     {
         int _w,_h;
-        unsigned char **_image;
+        unsigned char *_image;
 
     public:
         //gy_image_object constructor
@@ -24,12 +24,6 @@
         ~gy_image_object()
         {
             int i;
-
-            for(i = 0; i < _w; i++)
-            {
-                free(_image[i]);
-            }
-
             free(_image);
         }
 
@@ -38,21 +32,11 @@
         {
             int i;
 
-            for(i = 0; i < _w; i++)
-            {
-                free(_image[i]);
-            }
-
             free(_image);
 
             _w = w;
             _h = h;
-            _image = (unsigned char**) malloc(_w * sizeof(unsigned char*));
-
-            for(int i = 0; i < _w; i++)
-            {
-                _image[i] = (unsigned char*) malloc(_h);
-            }
+            _image = (unsigned char*)malloc(_w * _h);
         }
 
         //set pixel at (x,y) to v
@@ -63,7 +47,7 @@
                 return;
             }
 
-            _image[x][y] = v;
+            _image[x * _h + y] = v;
         }
 
         //get pixel from position (x,y), if pixel does not exist returns 0
@@ -71,10 +55,12 @@
         {
             if(x >= _w || x < 0 || y >= _h || y < 0)
             {
+                printf("pixel out of bound\n");
+
                 return 0;
             }
 
-            return _image[x][y];
+            return _image[x * _h + y];
         }
 
         //returns image's width
@@ -149,7 +135,7 @@
                 for(j = 0; j < w; j++)
                 {
                     fread(buff,1,3,image_fp);
-                    _image[j][i] = (int)trunc((double)buff[0] * (double)0.299 + (double)buff[1] * (double)0.587 + (double)buff[2] * (double)0.114);
+                    _image[j * _h + i] = (int)trunc((double)buff[0] * (double)0.299 + (double)buff[1] * (double)0.587 + (double)buff[2] * (double)0.114);
                 }
 
                 fread(buff,1,padding_len,image_fp);
@@ -238,9 +224,9 @@
             {
                 for(j = 0; j < _w; j++)
                 {
-                    buff[0] = _image[j][i];
-                    buff[1] = _image[j][i];
-                    buff[2] = _image[j][i];
+                    buff[0] = _image[j * _h + i];
+                    buff[1] = _image[j * _h + i];
+                    buff[2] = _image[j * _h + i];
                     fwrite(buff,1,3,image_fp);
                 }
 
