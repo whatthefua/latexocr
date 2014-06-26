@@ -26,7 +26,7 @@ using namespace std;
 
 #include "preprocessing.hpp"
 
-int *M;
+vector<bool**> chars;
 
 int main()
 {
@@ -34,7 +34,25 @@ int main()
 
     test.load_image("otsu.bmp");
 
-    preprocessing_median_filter(test,3);
+    chars = find_all(test);
 
-    test.save_image("lol.bmp");
+    for(int i = 0; i < 100; i++)
+    {
+        for(int j = 0; j < 70; j++)
+        {
+            printf("%c",(chars[140][i][j] == 0)? ' ':'#');
+        }
+        printf("\n");
+    }
+
+    preprocessing_zhang_suen_100x100(chars[140]);
+
+    for(int i = 0; i < 100; i++)
+    {
+        for(int j = 0; j < 70; j++)
+        {
+            printf("%c",(chars[140][i][j] == 0)? ' ':'#');
+        }
+        printf("\n");
+    }
 }

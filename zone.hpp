@@ -63,13 +63,13 @@ build 2D array
         margin-bottom : B
     output: 2D array
 */
-int** get_all(int width,int height,int x,int y,int L,int T,int R,int B){
-    int **A = new int*[T+B];
-    for(size_t i=0;i<T+B;i++) A[i] = new int[L+R];
+bool** get_all(int width,int height,int x,int y,int L,int T,int R,int B){
+    bool **A = new bool*[T+B];
+    for(size_t i=0;i<T+B;i++) A[i] = new bool[L+R];
 
     for(int r=std::max(y-T,0),i=0;r<std::min(y+B,height);r++,i++){
         for(int c=std::max(x-L,0),j=0;c<std::min(x+R,width);c++,j++){
-            A[i][j] = img[r][c];
+            A[i][j] = (img[r][c] == 0)? 1: 0;
         }
     }
     return A;
@@ -104,8 +104,8 @@ gy_image_object print100x100(int **A){
     output: vector of 2D array of each character
  */
 // unoptimized to debug easier
-std::vector < int** > find_all(gy_image_object _img){
-    std::vector < int** > output;
+std::vector < bool** > find_all(gy_image_object _img){
+    std::vector < bool** > output;
 
     int W = _img.width(), H = _img.height();
 
@@ -131,7 +131,7 @@ std::vector < int** > find_all(gy_image_object _img){
                 sum_x = (int)floor((double)sum_x/(double)count_pixel);
                 sum_y = (int)floor((double)sum_y/(double)count_pixel);
 
-                int **A = get_all(W,H,sum_x,sum_y,LEFT,TOP,RIGHT,BOTTOM);
+                bool **A = get_all(W,H,sum_x,sum_y,LEFT,TOP,RIGHT,BOTTOM);
                 output.push_back(A);
             }
         }
