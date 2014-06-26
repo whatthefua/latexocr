@@ -10,23 +10,31 @@
 
 #include "main.h"
 
-int **pass;
-int **img;
+int **pass;                     // use in flood-fill
+int **img;                      // image 2D array
 
 const int THRESHOLD = 50;
 
-const int LEFT = 50;
-const int TOP = 50;
-const int RIGHT = 50;
-const int BOTTOM = 50;
+const int LEFT = 50;            // margin-left
+const int TOP = 50;             // margin-top
+const int RIGHT = 50;           // margin-right
+const int BOTTOM = 50;          // margin-bottom
 
-const int DIRECTION = 8;
+const int DIRECTION = 8;                       
 const int dify[] = {-1,-1,-1,0,0,1,1,1};
 const int difx[] = {-1,0,1,-1,1,-1,0,1};
 
-int sum_y,sum_x;
-int count_pixel;
-int W,H;
+int sum_y,sum_x;        // use for find center of each character
+int count_pixel;        // use for find center of each character
+int W,H;                // width , height
+
+/*
+    flood-fill 
+    input: width, height, now_position_x, now_position_y
+ 
+    remark1 : can optimize to non-recursive to reduce time and memory
+    remark2 : variable [pass] is declared globally to reduce time when use in recursive function
+*/
 
 void fill(int width,int height,int x,int y){
     pass[y][x] = true;
@@ -42,6 +50,18 @@ void fill(int width,int height,int x,int y){
     }
 }
 
+
+
+/* 
+build 2D array 
+    input:
+        center at (x,y)
+        margin-left : L
+        margin-top : T
+        margin-right : R
+        margin-bottom : B
+    output: 2D array
+*/
 int** get_all(int width,int height,int x,int y,int L,int T,int R,int B){
     int **A = new int*[T+B];
     for(size_t i=0;i<T+B;i++) A[i] = new int[L+R];
@@ -54,6 +74,14 @@ int** get_all(int width,int height,int x,int y,int L,int T,int R,int B){
     return A;
 }
 
+
+
+
+/*
+    create image from 2D array 
+    input: 2D array
+    output: gy_image_object
+*/
 gy_image_object print100x100(int **A){
     gy_image_object output;
     output.resize(100,100);
@@ -66,6 +94,14 @@ gy_image_object print100x100(int **A){
     return output;
 }
 
+
+
+
+/*
+    find all characters in image
+    input: gy_image_object
+    output: vector of 2D array of each character
+ */
 // unoptimized to debug easier
 std::vector < int** > find_all(gy_image_object _img){
     std::vector < int** > output;
