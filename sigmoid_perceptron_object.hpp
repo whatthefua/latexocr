@@ -8,8 +8,8 @@
         double *_data,**_w,*_wt,*_output;
         int _dataSize,_outputSize;
     public:
-        /*constructor
-        creates perceptron with dataSize inputs and outputSize outputs*/
+        //constructor
+        //creates perceptron with dataSize inputs and outputSize outputs
         sigmoid_perceptron(int dataSize, int outputSize)
         {
             int i,j;
@@ -43,6 +43,8 @@
         }
 
         //calculates all outputs for a set of input
+        //the outputs will range in (0,1)
+        //the closer the output is to 1, the closer it resembles the training sets
         void fire(double *data)
         {
             int i,j;
@@ -98,7 +100,7 @@
             return MP;
         }
 
-        //extracts an output_value
+        //extracts an output_value, return -1 if x is invalid
         double output_value(int x)
         {
             return ((x >= _outputSize) || (x < 0))? (double)-1: _output[x];
