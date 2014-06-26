@@ -13,6 +13,8 @@
 int **pass;
 int **img;
 
+const int THRESHOLD = 50;
+
 const int LEFT = 50;
 const int TOP = 50;
 const int RIGHT = 50;
@@ -33,7 +35,7 @@ void fill(int width,int height,int x,int y){
     count_pixel++;
     for(int i=0;i<DIRECTION;i++){
         if( y+dify[i] >= 0 && y+dify[i] < height && x+difx[i] >= 0 && x+difx[i] < width){
-            if(not pass[y+dify[i]][x+difx[i]] and not img[y+dify[i]][x+difx[i]]){
+            if(not pass[y+dify[i]][x+difx[i]] and img[y+dify[i]][x+difx[i]] <= THRESHOLD){
                 fill(width,height,x+difx[i],y+dify[i]);
             }
         }
@@ -69,7 +71,6 @@ std::vector < int** > find_all(gy_image_object _img){
     std::vector < int** > output;
    
     int W = _img.width(), H = _img.height();
-//    printf("W = %d H = %d\n",W,H);
     
     pass = new int*[H];
     img = new int*[H];
@@ -84,15 +85,13 @@ std::vector < int** > find_all(gy_image_object _img){
     
     for(int i=0;i<H;i++){
         for(int j=0;j<W;j++){
-            if(not pass[i][j] and not img[i][j]){
+            if(not pass[i][j] and img[i][j] <= THRESHOLD){
                 count_pixel = sum_x = sum_y = 0;
                 
-//                printf("[%d,%d]\n",i,j);
                 fill(W,H,j,i);
                 
                 sum_x = (int)floor((double)sum_x/(double)count_pixel);
                 sum_y = (int)floor((double)sum_y/(double)count_pixel);
-//                printf("sum_x = %d sum_y = %d [%d]\n",sum_x,sum_y,count_pixel);
                 
                 int **A = get_all(W,H,sum_x,sum_y,LEFT,TOP,RIGHT,BOTTOM);
                 output.push_back(A);
