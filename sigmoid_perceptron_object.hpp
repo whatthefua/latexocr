@@ -8,6 +8,8 @@
         double *_data,**_w,*_wt,*_output;
         int _dataSize,_outputSize;
     public:
+        /*constructor
+        creates perceptron with dataSize inputs and outputSize outputs*/
         sigmoid_perceptron(int dataSize, int outputSize)
         {
             int i,j;
@@ -40,6 +42,7 @@
             }
         }
 
+        //calculates all outputs for a set of input
         void fire(double *data)
         {
             int i,j;
@@ -57,6 +60,7 @@
             }
         }
 
+        //trains perceptron with a set of data, set of expected outputs and learning rate alpha
         void learn(double *data, double *expect, double alpha)
         {
             int i,j;
@@ -73,6 +77,7 @@
             }
         }
 
+        //seeks output with maximum calculated value
         int output(void)
         {
             double M;
@@ -93,6 +98,13 @@
             return MP;
         }
 
+        //extracts an output_value
+        double output_value(int x)
+        {
+            return ((x >= _outputSize) || (x < 0))? (double)-1: _output[x];
+        }
+
+        //destructor
         ~sigmoid_perceptron(void)
         {
             int i;
