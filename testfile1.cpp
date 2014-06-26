@@ -32,10 +32,9 @@ int main()
 {
     gy_image_object test;
 
-    test.load_image("test1.bmp");
+    test.load_image("otsu.bmp");
 
-    preprocessing_niblack(test,100);
+    preprocessing_median_filter(test,3);
 
-    test.save_image("out.bmp");
+    test.save_image("lol.bmp");
 }
-//

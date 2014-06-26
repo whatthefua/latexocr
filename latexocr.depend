@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1403692195 source:d:\appserv\www\latexocr\testfile1.cpp
+1403750462 source:d:\appserv\www\latexocr\testfile1.cpp
 	<algorithm>
 	<cmath>
 	<cstdio>
@@ -17,23 +17,26 @@
 	<vector>
 	"preprocessing.hpp"
 
-1403689445 d:\appserv\www\latexocr\preprocessing.hpp
-	"image_object.hpp"
-	"otsu.hpp"
-	"niblack.hpp"
-	"sobel.hpp"
+1403748801 d:\appserv\www\latexocr\preprocessing.hpp
 	"hough.hpp"
+	"image_object.hpp"
+	"median_filter.hpp"
+	"niblack.hpp"
+	"otsu.hpp"
+	"sobel.hpp"
 	"zhang_suen.hpp"
 
-1403682379 d:\appserv\www\latexocr\image_object.hpp
+1403748792 d:\appserv\www\latexocr\image_object.hpp
 	<cstdlib>
 	<cmath>
+	<vector>
 
-1403594801 d:\appserv\www\latexocr\otsu.hpp
+1403748792 d:\appserv\www\latexocr\otsu.hpp
 	"image_object.hpp"
 
-1403602914 d:\appserv\www\latexocr\sobel.hpp
+1403748792 d:\appserv\www\latexocr\sobel.hpp
 	"image_object.hpp"
+	<cassert>
 
 1403607415 d:\appserv\www\latexocr\moravec.hpp
 	"image_object.hpp"
@@ -45,13 +48,16 @@
 
 1403664836 d:\appserv\www\latexocr\matrix.hpp
 
-1403684410 d:\appserv\www\latexocr\zhang_suen.hpp
+1403748792 d:\appserv\www\latexocr\zhang_suen.hpp
 	"image_object.hpp"
 
 1403688053 d:\appserv\www\latexocr\bradley.hpp
 	"image_object.hpp"
 
-1403691663 d:\appserv\www\latexocr\niblack.hpp
+1403748801 d:\appserv\www\latexocr\niblack.hpp
 	"image_object.hpp"
 	<cmath>
+
+1403750997 d:\appserv\www\latexocr\median_filter.hpp
+	"image_object.hpp"
 
