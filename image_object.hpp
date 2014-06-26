@@ -25,6 +25,8 @@
         //gy_image_object destructor
         ~gy_image_object()
         {
+            
+            _image = (unsigned char*)malloc(sizeof(unsigned char));
             free(_image);
         }
 
