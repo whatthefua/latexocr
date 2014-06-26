@@ -1,10 +1,11 @@
 #ifndef preprocessing
     #define preprocessing
 
-    #include "image_object.hpp"
-    #include "otsu.hpp"
-    #include "niblack.hpp"
-    #include "sobel.hpp"
     #include "hough.hpp"
+    #include "image_object.hpp"
+    #include "median_filter.hpp"
+    #include "niblack.hpp"
+    #include "otsu.hpp"
+    #include "sobel.hpp"
     #include "zhang_suen.hpp"
 #endif
