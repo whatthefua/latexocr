@@ -7,9 +7,16 @@
     void preprocessing_zhang_suen(gy_image_object &img)
     {
         int w = img.width(),h = img.height(),i,j;
-        char A[w][h],B[w][h];
-        unsigned char N[w][h];
-
+        
+        char **A = new char*[w];
+        char **B = new char*[w];
+        unsigned char **N = new unsigned char*[w];
+        for(size_t i=0;i<w;i++){
+            A[i] = new char[h];
+            B[i] = new char[h];
+            N[i] = new unsigned char[h];
+        }
+        
         bool change_flag = 1;
 
         while(change_flag)
@@ -123,5 +130,16 @@
                 }
             }
         }
+        
+        
+        
+        for(size_t i=w;i>0;){
+            delete[] A[--i];
+            delete[] B[i];
+            delete[] N[i];
+        }
+        delete[] A;
+        delete[] B;
+        delete[] N;
     }
 #endif
