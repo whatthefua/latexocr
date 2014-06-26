@@ -13,6 +13,7 @@
 int **pass;                     // use in flood-fill
 int **img;                      // image 2D array
 
+const int MINIMAL_PIXEL = 30;   // minimum pixel for one character
 const int THRESHOLD = 50;
 
 const int LEFT = 50;            // margin-left
@@ -125,6 +126,7 @@ std::vector < int** > find_all(gy_image_object _img){
                 count_pixel = sum_x = sum_y = 0;
                 
                 fill(W,H,j,i);
+                if(count_pixel < MINIMAL_PIXEL) continue;
                 
                 sum_x = (int)floor((double)sum_x/(double)count_pixel);
                 sum_y = (int)floor((double)sum_y/(double)count_pixel);
