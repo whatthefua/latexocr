@@ -8,4 +8,5 @@
     #include "otsu.hpp"
     #include "sobel.hpp"
     #include "zhang_suen.hpp"
+    #include "zone.hpp"
 #endif
