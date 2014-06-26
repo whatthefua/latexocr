@@ -4,6 +4,7 @@
     #include "image_object.hpp"
     #include <cmath>
 
+    //runs niblack algorithm on img with window size of window_size
     void preprocessing_niblack(gy_image_object &img, int window_size)
     {
         int w = img.width(),h = img.height(),i,j,x1,x2,y1,y2,pix,sum,sd;

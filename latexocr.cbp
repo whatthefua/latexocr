@@ -33,6 +33,7 @@
 		</Compiler>
 		<Unit filename="hough.hpp" />
 		<Unit filename="image_object.hpp" />
+		<Unit filename="median_filter.hpp" />
 		<Unit filename="niblack.hpp" />
 		<Unit filename="otsu.hpp" />
 		<Unit filename="preprocessing.hpp" />
