@@ -26,7 +26,7 @@
             {
                 if(img.get_pixel(i,j) == 0)
                 {
-                    for(theta = (double)-89; theta <= (double)90; theta ++)
+                    for(theta = (double)-89; theta <= (double)90; theta++)
                     {
                         d = trunc((double)j * cos(theta * M_PI / (double)180) - (double)i * sin(theta * M_PI / (double)180)) + diagonal;
                         M[d * 180 + (int)theta + 89]++;

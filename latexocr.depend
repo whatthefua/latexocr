@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1403755054 source:d:\appserv\www\latexocr\testfile1.cpp
+1403858560 source:d:\appserv\www\latexocr\testfile1.cpp
 	<algorithm>
 	<cmath>
 	<cstdio>
@@ -15,12 +15,16 @@
 	<stack>
 	<string>
 	<vector>
+	<windows.h>
 	"preprocessing.hpp"
+	"ai.hpp"
 
-1403751302 d:\appserv\www\latexocr\preprocessing.hpp
+1403847317 d:\appserv\www\latexocr\preprocessing.hpp
+	"crop.hpp"
 	"hough.hpp"
 	"image_object.hpp"
 	"median_filter.hpp"
+	"mesc_preprocessing.hpp"
 	"niblack.hpp"
 	"otsu.hpp"
 	"sobel.hpp"
@@ -42,7 +46,7 @@
 1403607415 d:\appserv\www\latexocr\moravec.hpp
 	"image_object.hpp"
 
-1403682615 d:\appserv\www\latexocr\hough.hpp
+1403845185 d:\appserv\www\latexocr\hough.hpp
 	"image_object.hpp"
 	<cstdlib>
 	<cmath>
@@ -55,7 +59,7 @@
 1403688053 d:\appserv\www\latexocr\bradley.hpp
 	"image_object.hpp"
 
-1403748801 d:\appserv\www\latexocr\niblack.hpp
+1403856247 d:\appserv\www\latexocr\niblack.hpp
 	"image_object.hpp"
 	<cmath>
 
@@ -87,4 +91,37 @@
 	"otsu.hpp"
 	"sobel.hpp"
 	"zhang_suen.hpp"
+
+1403840978 d:\appserv\www\latexocr\crop.hpp
+	"image_object.hpp"
+
+1403758590 d:\appserv\www\latexocr\ai.hpp
+	"sigmoid_perceptron_object.hpp"
+
+1403762210 d:\appserv\www\latexocr\sigmoid_perceptron_object.hpp
+	<cmath>
+
+1403847416 d:\appserv\www\latexocr\mesc_preprocessing.hpp
+	"image_object.hpp"
+	<utility>
+
+1403858517 source:d:\appserv\www\latexocr\testfile2.cpp
+	<algorithm>
+	<cmath>
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	<deque>
+	<functional>
+	<iostream>
+	<list>
+	<map>
+	<queue>
+	<set>
+	<stack>
+	<string>
+	<vector>
+	<windows.h>
+	"preprocessing.hpp"
+	"ai.hpp"
 

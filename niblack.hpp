@@ -4,8 +4,8 @@
     #include "image_object.hpp"
     #include <cmath>
 
-    //runs niblack algorithm on img with window size of window_size
-    void preprocessing_niblack(gy_image_object &img, int window_size)
+    //runs niblack algorithm on img with window size of window_size, pixels will be identified as black if it's darker than avg-threshold_constant*sd
+    void preprocessing_niblack(gy_image_object &img, int window_size, double threshold_constant)
     {
         int w = img.width(),h = img.height(),i,j,x1,x2,y1,y2,pix,sum,sd;
         int *QS;
@@ -96,7 +96,7 @@
 
                 sd = (int)sqrt(((long long int)pwsum - (2 * (long long int)sum * (long long int)sum / (long long int)pix)) / (long long int)pix + ((long long int)sum * (long long int)sum / (long long int)pix / (long long int)pix));
 
-                (img.get_pixel(i,j) < sum / pix - (int)((double)1.3 * (double)sd))? img.set_pixel(i,j,0): img.set_pixel(i,j,255);
+                (img.get_pixel(i,j) < sum / pix - (int)(threshold_constant * (double)sd))? img.set_pixel(i,j,0): img.set_pixel(i,j,255);
             }
         }
     }
