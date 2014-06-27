@@ -28,8 +28,6 @@ using namespace std;
 #include "preprocessing.hpp"
 #include "ai.hpp"
 
-sigmoid_perceptron SP(784,10);
-
 int main()
 {
 

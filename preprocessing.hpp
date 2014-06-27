@@ -1,6 +1,7 @@
 #ifndef preprocessing
     #define preprocessing
 
+    #include "crop.hpp"
     #include "hough.hpp"
     #include "image_object.hpp"
     #include "median_filter.hpp"
