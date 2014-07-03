@@ -4,6 +4,8 @@
     #include "image_object.hpp"
     #include <cstdlib>
     #include <cmath>
+    #include <algorithm>
+    using namespace std;
 
     //extracts line segments from img into M
     int* preprocessing_linear_hough(gy_image_object img, int *M)

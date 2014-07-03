@@ -2,6 +2,7 @@
     #define image_object
 
     #include <cstdlib>
+    #include <cstdio>
     #include <cmath>
     #include <vector>
 
@@ -25,7 +26,7 @@
         //gy_image_object destructor
         ~gy_image_object()
         {
-            
+
             _image = (unsigned char*)malloc(sizeof(unsigned char));
             free(_image);
         }
@@ -39,13 +40,13 @@
             _h = h;
             _image = (unsigned char*)malloc(_w * _h);
         }
-        
+
         // get size of image
         // return pair of (width,height)
         std::pair<int,int> size(){
             return std::pair<int,int>(_w,_h);
         }
-        
+
         //set pixel at (x,y) to v
         void set_pixel(int x, int y, unsigned char v)
         {
@@ -57,14 +58,12 @@
             _image[x * _h + y] = v;
         }
 
-        //get pixel from position (x,y), if pixel does not exist returns 0
-        unsigned char get_pixel(int x, int y)
+        //get pixel from position (x,y), if pixel does not exist returns 2000000000
+        int get_pixel(int x, int y)
         {
             if(x >= _w || x < 0 || y >= _h || y < 0)
             {
-                printf("pixel out of bound\n");
-
-                return 0;
+                return 2000000000;
             }
 
             return _image[x * _h + y];

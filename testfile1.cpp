@@ -44,7 +44,7 @@ int main()
     double v1,v2,v3,mn = 10000000;
     FILE *fp;
 
-    for(i = 0; i < 2; i++)
+    for(i = 2; i == 2; i++)
     {
         for(j = 1; j <= 4; j++)
         {
@@ -163,7 +163,7 @@ int main()
 
             printf("<%lf,%lf,%lf>: %d\n",(double)mx1 / (double)inp.width(),(double)mx2 / (double)inp.height(),(double)(mx3 + 10) / (double)d,mx);*/
 
-      //  }
+    //    }
     //}
 
     /*int i,j;
@@ -182,4 +182,5 @@ int main()
         }
     }
 }
+
 */
